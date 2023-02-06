@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="google-signin-client_id"
+          content="896534143716-umtk7t15u3abclh3ntbng01d625qnpmh.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</head>
+<body>
+<a href="#" onclick="signOut();">Sign out</a>
+<a href="#" onclick="test();">Test</a>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+</body>
+<script>
+    function test(){
+        var auth2 = gapi.auth2.getAuthInstance();
+        if (auth2.Mm.isSignedIn.Nb){
+            console.log(true);
+        }else{
+            console.log(false);
+        }
+    }
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+            console.log('User signed out.');
+        });
+    }
+</script>
+</html>
